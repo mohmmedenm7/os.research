@@ -3,18 +3,18 @@ import './FutureOS.css';
 
 const topics = [
     {
-        title: 'AI Integrated OS',
-        desc: 'Operating systems will transition from being passive resource managers to proactive personal assistants with LLM integration.',
+        title: 'نظام تشغيل متكامل مع الذكاء الاصطناعي',
+        desc: 'ستنتقل أنظمة التشغيل من مديري موارد سلبيين إلى مساعدين شخصيين نشطين مع تكامل نماذج اللغة الكبيرة.',
         icon: '🤖'
     },
     {
-        title: 'Post-Quantum Security',
-        desc: 'Next-gen OS cores will implement quantum-resistant encryption algorithms to secure data against future threats.',
+        title: 'أمان ما بعد الكم',
+        desc: 'ستنفذ أنوية أنظمة التشغيل الجيل القادم خوارزميات تشفير مقاومة للكم لتأمين البيانات ضد التهديدات المستقبلية.',
         icon: '🔐'
     },
     {
-        title: 'Web-first Runtime',
-        desc: 'The line between the browser and OS continues to blur, with WASM and Cloud-native architectures leading the way.',
+        title: 'بيئة تشغيل ويب أولاً',
+        desc: 'يستمر الخط بين المتصفح ونظام التشغيل في الاختفاء، مع WASM والمعماريات السحابية في الطليعة.',
         icon: '🌐'
     }
 ];
@@ -24,8 +24,8 @@ const FutureOS: React.FC = () => {
         <section id="future" className="section-padding future-section">
             <div className="future-bg"></div>
             <div className="container">
-                <h2 className="section-title">The Future of OS</h2>
-                <p className="section-subtitle">What lies ahead in the next decade of system software?</p>
+                <h2 className="section-title">مستقبل أنظمة التشغيل</h2>
+                <p className="section-subtitle">ماذا ينتظرنا في العقد القادم من برمجيات النظام؟</p>
 
                 <div className="future-grid">
                     {topics.map((t, i) => (
@@ -38,7 +38,7 @@ const FutureOS: React.FC = () => {
                 </div>
 
                 <div className="final-cta reveal">
-                    <button className="btn-primary">Download Complete Research PDF</button>
+                    <button className="btn-primary">تحميل بحث كامل PDF</button>
                 </div>
             </div>
         </section>

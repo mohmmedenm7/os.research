@@ -6,7 +6,6 @@ import ProcessManagement from './components/ProcessManagement';
 import MemoryManagement from './components/MemoryManagement';
 import KernelArchitecture from './components/KernelArchitecture';
 import OSComparison from './components/OSComparison';
-import FutureOS from './components/FutureOS';
 import './App.css';
 
 function App() {
@@ -25,10 +24,15 @@ function App() {
             entry.target.classList.add('active');
           }
         });
-      }, { threshold: 0.1 });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+      });
 
-      const revealElements = document.querySelectorAll('.reveal');
+      // Observe all reveal elements
+      const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger');
       revealElements.forEach(el => observer.observe(el));
+
       return () => observer.disconnect();
     }
   }, [isBooting]);
@@ -51,14 +55,13 @@ function App() {
         <div className="container nav-content">
           <div className="logo">
             <span className="logo-icon">⚙️</span>
-            <span className="logo-text">OS Research</span>
+            <span className="logo-text">بحث أنظمة التشغيل</span>
           </div>
           <div className="nav-actions">
-            <button className="theme-toggle" onClick={toggleTheme} title="Toggle Theme">
+            <button className="theme-toggle" onClick={toggleTheme} title="تغيير المظهر">
               {theme === 'dark' ? '☀️' : '🌙'}
             </button>
-            <button className="btn-nav" onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}>Contact</button>
-            <button className="btn-nav primary">Full PDF</button>
+            <button className="btn-nav primary">PDF كامل</button>
           </div>
         </div>
       </nav>
@@ -72,7 +75,6 @@ function App() {
         <MemoryManagement />
         <KernelArchitecture />
         <OSComparison />
-        <FutureOS />
       </main>
 
       <footer className="footer section-padding">

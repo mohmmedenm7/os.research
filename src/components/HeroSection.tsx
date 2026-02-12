@@ -16,17 +16,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onEnter }) => {
             <div className="container hero-content">
                 <div className="badge reveal active">University of Science and Technology</div>
                 <h1 className="hero-title reveal active">
-                    Operating Systems
-                    <span className="text-gradient"> The Brain Between You and the Machine</span>
+                    أنظمة التشغيل
                 </h1>
                 <p className="hero-subtitle reveal active">
-                    A comprehensive research on Operating System Architecture, Computer Architecture, and Software Engineering.
-                    <br /><small style={{ opacity: 0.7, fontSize: '0.9rem' }}>Group 9: Ahmed Elsawi • Mohamed Abubaker • Mohammed Eisa</small>
+                    بحث شامل في معمارية أنظمة التشغيل، معمارية الحاسوب، وهندسة البرمجيات.
+                    <br /><small style={{ opacity: 0.7, fontSize: '0.9rem' }}>المجموعة 9: أحمد الصاوي • محمد أبوبكر • محمد عيسى</small>
                 </p>
 
                 <div className="hero-actions reveal active">
                     <button className="btn-primary" onClick={onEnter}>
-                        Enter the System
+                        ادخل إلى النظام
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M5 12h14m-7-7 7 7-7 7" />
                         </svg>
@@ -38,7 +37,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onEnter }) => {
                 <div className="mouse">
                     <div className="wheel"></div>
                 </div>
-                <span>Scroll down to explore</span>
+                <span>مرر للأسفل للاستكشاف</span>
             </div>
         </section>
     );

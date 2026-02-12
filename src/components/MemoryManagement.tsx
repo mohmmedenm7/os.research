@@ -48,15 +48,15 @@ const MemoryManagement: React.FC = () => {
     return (
         <section id="memory" className="section-padding memory-section">
             <div className="container">
-                <h2 className="section-title">Memory Management</h2>
-                <p className="section-subtitle">Real-time RAM visualization of Allocation and Deallocation.</p>
+                <h2 className="section-title reveal">إدارة الذاكرة</h2>
+                <p className="section-subtitle reveal">تصور فوري للذاكرة العشوائية للتخصيص والتحرير.</p>
 
                 <div className="memory-controls">
-                    <button className="btn-action allocate" onClick={allocateMemory}>Allocate 64MB</button>
-                    <button className="btn-action deallocate" onClick={deallocateMemory}>Free Memory</button>
+                    <button className="btn-action allocate" onClick={allocateMemory}>تخصيص 64 ميجابايت</button>
+                    <button className="btn-action deallocate" onClick={deallocateMemory}>تحرير الذاكرة</button>
                 </div>
 
-                <div className="ram-grid glass-effect">
+                <div className="ram-grid glass-effect reveal-scale">
                     {blocks.map(block => (
                         <div
                             key={block.id}
@@ -72,9 +72,9 @@ const MemoryManagement: React.FC = () => {
                 </div>
 
                 <div className="memory-legend">
-                    <div className="legend-item"><span className="dot reserved"></span> Reserved (Kernel)</div>
-                    <div className="legend-item"><span className="dot allocated"></span> Allocated</div>
-                    <div className="legend-item"><span className="dot free"></span> Free</div>
+                    <div className="legend-item"><span className="dot reserved"></span> محجوز (Kernel)</div>
+                    <div className="legend-item"><span className="dot allocated"></span> مخصص</div>
+                    <div className="legend-item"><span className="dot free"></span> فارغ</div>
                 </div>
             </div>
         </section>

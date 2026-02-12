@@ -44,21 +44,21 @@ const ProcessManagement: React.FC = () => {
         <section id="processes" className="section-padding process-section">
             <div className="container">
                 <div className="process-grid">
-                    <div className="process-info reveal">
-                        <h2 className="section-title text-left">Process Management</h2>
-                        <p className="section-subtitle text-left">
-                            The OS decides which process gets the CPU's attention. This is called Scheduling.
+                    <div className="process-info reveal-left">
+                        <h2 className="section-title text-right">إدارة العمليات</h2>
+                        <p className="section-subtitle text-right">
+                            يقرر نظام التشغيل أي عملية تحصل على اهتمام المعالج. هذا يسمى الجدولة.
                         </p>
                         <div className="scheduler-card glass-effect">
-                            <h3>CPU Scheduler</h3>
-                            <p>Current Algorithm: <strong>Round Robin</strong></p>
-                            <button className="btn-small" onClick={rotateProcess}>Next Time Slice</button>
+                            <h3>مجدول المعالج</h3>
+                            <p>الخوارزمية الحالية: <strong>Round Robin</strong></p>
+                            <button className="btn-small" onClick={rotateProcess}>الشريحة الزمنية التالية</button>
                         </div>
                     </div>
 
-                    <div className="process-viz">
+                    <div className="process-viz reveal-right">
                         <div className="cpu-core glass-effect">
-                            <div className="core-label">CPU CORE 0</div>
+                            <div className="core-label">نواة المعالج 0</div>
                             <div className="active-process">
                                 {processes.find(p => p.status === 'active')?.name}
                             </div>
@@ -66,7 +66,7 @@ const ProcessManagement: React.FC = () => {
                         </div>
 
                         <div className="process-queue">
-                            <div className="queue-label">Ready Queue</div>
+                            <div className="queue-label">قائمة الانتظار</div>
                             <div className="queue-items">
                                 {processes.filter(p => p.status !== 'active').map(p => (
                                     <div key={p.id} className="queue-item glass-effect">

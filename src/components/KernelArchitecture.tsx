@@ -3,21 +3,21 @@ import './KernelArchitecture.css';
 
 const architectures = [
     {
-        type: 'Monolithic',
-        description: 'All OS services run in kernel space. Fast execution but a failure in any component may lead to system crashes.',
-        features: ['Single Address Space', 'High Performance', 'Difficult Maintenance', 'Linux, Traditional Unix'],
+        type: 'موحد (Monolithic)',
+        description: 'جميع خدمات نظام التشغيل تعمل في مساحة النواة. تنفيذ سريع لكن فشل أي مكون قد يؤدي إلى انهيار النظام.',
+        features: ['مساحة عنونة واحدة', 'أداء عالي', 'صيانة صعبة', 'Linux, Traditional Unix'],
         color: '#0078D4'
     },
     {
-        type: 'Microkernel',
-        description: 'Only essential services in kernel. Rest run in user space. Higher security and better system stability.',
-        features: ['Minimal Core', 'User-Space Services', 'Message Passing', 'Minix, QNX'],
+        type: 'ميكرو (Microkernel)',
+        description: 'فقط الخدمات الأساسية في النواة. الباقي يعمل في مساحة المستخدم. أمان أعلى واستقرار أفضل.',
+        features: ['نواة صغيرة', 'خدمات في مساحة المستخدم', 'تمرير الرسائل', 'Minix, QNX'],
         color: '#10B981'
     },
     {
-        type: 'Hybrid',
-        description: 'Combines monolithic and microkernel designs. Runs some services in kernel mode for performance, others in user space for stability.',
-        features: ['Balanced Design', 'Performance + Security', 'Flexible Architecture', 'Windows NT, macOS (XNU)'],
+        type: 'هجين (Hybrid)',
+        description: 'يجمع بين تصميمي الموحد والميكرو. يشغل بعض الخدمات في وضع النواة للأداء، والبعض في مساحة المستخدم للاستقرار.',
+        features: ['تصميم متوازن', 'أداء + أمان', 'معمارية مرنة', 'Windows NT, macOS (XNU)'],
         color: '#F59E0B'
     }
 ];
@@ -26,8 +26,8 @@ const KernelArchitecture: React.FC = () => {
     return (
         <section id="kernel" className="section-padding kernel-section">
             <div className="container">
-                <h2 className="section-title">Kernel Architecture</h2>
-                <p className="section-subtitle">Comparing the core design philosophies of Modern OS.</p>
+                <h2 className="section-title reveal">معمارية النواة</h2>
+                <p className="section-subtitle reveal">مقارنة فلسفات التصميم الأساسية لأنظمة التشغيل الحديثة.</p>
 
                 <div className="kernel-grid">
                     {architectures.map((arch, index) => (

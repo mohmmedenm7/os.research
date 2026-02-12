@@ -58,6 +58,7 @@
     font-size: 0.875rem;
     color: var(--accent);
     margin-bottom: 2rem;
+    margin-top: 1rem;
     font-weight: 500;
 }
 
@@ -71,8 +72,12 @@
     font-size: 1.25rem;
     color: var(--text-secondary);
     max-width: 600px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 2rem;
     line-height: 1.6;
+}
+
+.hero-actions {
+    margin-bottom: 4rem;
 }
 
 .btn-primary {

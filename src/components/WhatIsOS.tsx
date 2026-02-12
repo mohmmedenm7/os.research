@@ -2,10 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import './WhatIsOS.css';
 
 const layers = [
-    { id: 'user', title: 'User', icon: '👤', description: 'Interacts with the system through input devices.' },
-    { id: 'apps', title: 'Applications', icon: '📱', description: 'Web browsers, text editors, games, etc.' },
-    { id: 'os', title: 'Operating System', icon: '⚙️', description: 'The software that manages hardware and software resources.' },
-    { id: 'hardware', title: 'Hardware', icon: '🔌', description: 'CPU, RAM, Storage, and other physical components.' }
+    { id: 'user', title: 'المستخدم', icon: '👤', description: 'يتفاعل مع النظام من خلال أجهزة الإدخال.' },
+    { id: 'apps', title: 'التطبيقات', icon: '📱', description: 'متصفحات الويب، محررات النصوص، الألعاب، وغيرها.' },
+    { id: 'os', title: 'نظام التشغيل', icon: '⚙️', description: 'البرنامج الذي يدير موارد الأجهزة والبرمجيات.' },
+    { id: 'hardware', title: 'العتاد', icon: '🔌', description: 'المعالج، الذاكرة، التخزين، والمكونات المادية الأخرى.' }
 ];
 
 const WhatIsOS: React.FC = () => {
@@ -30,13 +30,13 @@ const WhatIsOS: React.FC = () => {
         <section id="what-is-os" className="section-padding layers-section">
             <div className="container">
                 <div className="section-header">
-                    <h2 className="section-title">What is an Operating System?</h2>
-                    <p className="section-subtitle">A layered architecture bridging the gap between users and physical hardware.</p>
-                    <div className="intro-text" style={{ maxWidth: '800px', margin: '2rem auto', textAlign: 'left', color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+                    <h2 className="section-title">ما هو نظام التشغيل؟</h2>
+                    <p className="section-subtitle">معمارية طبقية تربط بين المستخدمين والعتاد المادي.</p>
+                    <div className="intro-text" style={{ maxWidth: '800px', margin: '2rem auto', textAlign: 'right', color: 'var(--text-secondary)', lineHeight: '1.8' }}>
                         <p>
-                            In computers, the operating system is the system that manages the computer's resources and acts as an intermediary
-                            between the user and the computer's hardware components. An operating system is a collection of programs responsible
-                            for managing the CPU, memory, controlling input and output devices, running applications, and providing a secure environment for them.
+                            في أجهزة الكمبيوتر، نظام التشغيل هو النظام الذي يدير موارد الكمبيوتر ويعمل كوسيط
+                            بين المستخدم ومكونات أجهزة الكمبيوتر. نظام التشغيل هو مجموعة من البرامج المسؤولة
+                            عن إدارة المعالج والذاكرة والتحكم في أجهزة الإدخال والإخراج وتشغيل التطبيقات وتوفير بيئة آمنة لها.
                         </p>
                     </div>
                 </div>

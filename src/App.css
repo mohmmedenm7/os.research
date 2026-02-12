@@ -4,13 +4,16 @@
 
 .navbar {
   position: fixed;
-  top: 1rem;
+  top: 0.25rem;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
   max-width: 1200px;
-  z-index: 100;
-  padding: 0.75rem 1.5rem;
+  z-index: 1000;
+  padding: 0.875rem 1.75rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-content {
@@ -22,9 +25,15 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.5));
 }
 
 .nav-actions {
@@ -50,21 +59,29 @@
 }
 
 .btn-nav {
-  padding: 0.5rem 1.25rem;
-  border-radius: 8px;
-  font-weight: 500;
+  padding: 0.625rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
   font-size: 0.875rem;
   color: var(--text-primary);
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
 }
 
 .btn-nav.primary {
   background: var(--accent);
   color: #000;
+  box-shadow: 0 2px 12px rgba(34, 211, 238, 0.3);
+}
+
+.btn-nav.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(34, 211, 238, 0.5);
+  background: #fff;
 }
 
 .btn-nav:hover {
-  opacity: 0.8;
+  border-color: var(--accent);
 }
 
 .section-title {

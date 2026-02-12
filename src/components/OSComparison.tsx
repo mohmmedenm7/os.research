@@ -46,8 +46,8 @@ const OSComparison: React.FC = () => {
     return (
         <section id="comparison" className="section-padding comparison-section">
             <div className="container">
-                <h2 className="section-title">The Big Three</h2>
-                <p className="section-subtitle">Comparison of major Operating Systems and their use cases.</p>
+                <h2 className="section-title reveal">الثلاثة الكبار</h2>
+                <p className="section-subtitle reveal">مقارنة أنظمة التشغيل الرئيسية وحالات استخدامها.</p>
 
                 <div className="os-cards">
                     {osData.map(os => (
@@ -59,30 +59,30 @@ const OSComparison: React.FC = () => {
                             <div className="os-main">
                                 <div className="os-logo" style={{ color: os.color }}>{os.logo}</div>
                                 <h3>{os.name}</h3>
-                                <div className="expand-hint">{activeOS === os.name ? 'Collapse' : 'Learn more'}</div>
+                                <div className="expand-hint">{activeOS === os.name ? 'إغلاق' : 'معرفة المزيد'}</div>
                             </div>
 
                             <div className="os-details">
                                 <div className="detail-item">
-                                    <strong>Family:</strong> {os.family}
+                                    <strong>العائلة:</strong> {os.family}
                                 </div>
                                 <div className="detail-item">
-                                    <strong>Kernel:</strong> {os.kernel}
+                                    <strong>النواة:</strong> {os.kernel}
                                 </div>
                                 <div className="detail-item">
-                                    <strong>Architecture:</strong> {os.architecture}
+                                    <strong>المعمارية:</strong> {os.architecture}
                                 </div>
                                 <div className="detail-item">
-                                    <strong>Languages:</strong> {os.languages}
+                                    <strong>اللغات:</strong> {os.languages}
                                 </div>
                                 <div className="detail-item">
-                                    <strong>Market Share:</strong> {os.marketShare}
+                                    <strong>حصة السوق:</strong> {os.marketShare}
                                 </div>
                                 <div className="detail-item">
-                                    <strong>Best for:</strong> {os.usage}
+                                    <strong>الأفضل لـ:</strong> {os.usage}
                                 </div>
                                 <div className="os-pros">
-                                    <strong>Key Strengths:</strong>
+                                    <strong>نقاط القوة:</strong>
                                     <ul>
                                         {os.pros.map(p => <li key={p}>{p}</li>)}
                                     </ul>
