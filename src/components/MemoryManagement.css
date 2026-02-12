@@ -1,0 +1,126 @@
+.memory-section {
+    background: var(--bg-primary);
+}
+
+.memory-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.btn-action {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-action.allocate {
+    background: var(--success);
+    color: #fff;
+}
+
+.btn-action.deallocate {
+    background: var(--danger);
+    color: #fff;
+}
+
+.btn-action:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.ram-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ram-block {
+    aspect-ratio: 1;
+    background: var(--bg-accent);
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ram-block.reserved {
+    background: var(--text-secondary);
+    opacity: 0.5;
+}
+
+.ram-block.allocated {
+    background: var(--accent);
+    box-shadow: 0 0 15px var(--accent-glow);
+    transform: scale(0.95);
+}
+
+.ram-block.free {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.block-id {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.block-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    color: #000;
+}
+
+.ram-block.free .block-label {
+    color: var(--text-secondary);
+}
+
+.memory-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+.dot.reserved {
+    background: var(--text-secondary);
+}
+
+.dot.allocated {
+    background: var(--accent);
+}
+
+.dot.free {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 480px) {
+    .ram-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

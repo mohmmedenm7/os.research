@@ -1,0 +1,107 @@
+.comparison-section {
+    background: var(--bg-primary);
+}
+
+.os-cards {
+    display: flex;
+    gap: 2rem;
+    margin-top: 4rem;
+    align-items: flex-start;
+}
+
+.os-card {
+    flex: 1;
+    padding: 2.5rem;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    max-height: 250px;
+}
+
+.os-card.expanded {
+    flex: 2;
+    max-height: 600px;
+    background: rgba(34, 211, 238, 0.05);
+    border-color: var(--accent);
+}
+
+.os-main {
+    text-align: center;
+}
+
+.os-logo {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.os-main h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.expand-hint {
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.os-details {
+    margin-top: 2.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.os-card.expanded .os-details {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.detail-item {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.detail-item strong {
+    color: var(--accent);
+}
+
+.os-pros {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--bg-accent);
+}
+
+.os-pros ul {
+    margin-top: 1rem;
+    list-style: none;
+}
+
+.os-pros li {
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.os-pros li::before {
+    content: "✓";
+    color: var(--success);
+}
+
+@media (max-width: 1024px) {
+    .os-cards {
+        flex-direction: column;
+    }
+
+    .os-card {
+        width: 100%;
+        max-height: 200px;
+    }
+
+    .os-card.expanded {
+        max-height: 600px;
+    }
+}

@@ -1,0 +1,133 @@
+.kernel-section {
+    background: var(--bg-secondary);
+}
+
+.kernel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.kernel-card {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.kernel-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+}
+
+.arch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.arch-header h3 {
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+.arch-icon {
+    font-size: 2rem;
+}
+
+.arch-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.arch-features {
+    list-style: none;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.arch-features li {
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.arch-features li::before {
+    content: "→";
+    color: var(--accent);
+}
+
+.arch-visual {
+    height: 120px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.viz-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.k-space,
+.u-space {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.monolithic .k-space {
+    height: 80%;
+    background: var(--accent);
+    color: #000;
+}
+
+.monolithic .u-space {
+    height: 20%;
+    background: var(--bg-accent);
+}
+
+.microkernel .k-space {
+    height: 20%;
+    background: var(--accent);
+    color: #000;
+}
+
+.microkernel .u-space {
+    height: 80%;
+    background: var(--bg-accent);
+}
+
+.hybrid .k-space {
+    height: 50%;
+    background: var(--accent);
+    color: #000;
+}
+
+.hybrid .u-space {
+    height: 50%;
+    background: var(--bg-accent);
+}
+
+@media (max-width: 1024px) {
+    .kernel-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .kernel-grid {
+        grid-template-columns: 1fr;
+    }
+}
