@@ -6,6 +6,7 @@ import ProcessManagement from './components/ProcessManagement';
 import MemoryManagement from './components/MemoryManagement';
 import KernelArchitecture from './components/KernelArchitecture';
 import OSComparison from './components/OSComparison';
+import FloatingLines from './components/FloatingLines';
 import './App.css';
 
 function App() {
@@ -18,22 +19,49 @@ function App() {
 
   useEffect(() => {
     if (!isBooting) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
+      const handleScroll = () => {
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger');
+
+        revealElements.forEach((element) => {
+          const rect = element.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+
+          // Calculate how much of the element is visible (0 to 1)
+          const elementTop = rect.top;
+          const elementHeight = rect.height;
+
+          // Start revealing when element enters bottom 20% of viewport
+          const revealStart = windowHeight * 0.8;
+          const revealEnd = windowHeight * 0.2;
+
+          let progress = 0;
+
+          if (elementTop < revealStart && elementTop > revealEnd - elementHeight) {
+            // Calculate progress (0 = not started, 1 = fully revealed)
+            progress = 1 - ((elementTop - revealEnd) / (revealStart - revealEnd));
+            progress = Math.max(0, Math.min(1, progress));
+          } else if (elementTop <= revealEnd - elementHeight) {
+            progress = 1;
           }
+
+          // Apply transform based on progress
+          const translateY = 100 * (1 - progress);
+          const scale = 0.95 + (0.05 * progress);
+          const rotateX = 10 * (1 - progress);
+          const opacity = progress;
+
+          (element as HTMLElement).style.transform = `translateY(${translateY}px) scale(${scale}) rotateX(${rotateX}deg)`;
+          (element as HTMLElement).style.opacity = opacity.toString();
         });
-      }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
-      });
+      };
 
-      // Observe all reveal elements
-      const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger');
-      revealElements.forEach(el => observer.observe(el));
+      // Initial check
+      handleScroll();
 
-      return () => observer.disconnect();
+      // Listen to scroll
+      window.addEventListener('scroll', handleScroll, { passive: true });
+
+      return () => window.removeEventListener('scroll', handleScroll);
     }
   }, [isBooting]);
 
@@ -51,6 +79,17 @@ function App() {
 
   return (
     <div className={`app ${theme}`}>
+      <FloatingLines
+        linesGradient={['#22D3EE', '#3B82F6', '#8B5CF6']}
+        enabledWaves={['middle', 'bottom']}
+        lineCount={[8, 6]}
+        lineDistance={[3, 4]}
+        animationSpeed={0.5}
+        interactive={true}
+        parallax={true}
+        mixBlendMode="screen"
+      />
+
       <nav className="navbar glass-effect">
         <div className="container nav-content">
           <div className="logo">

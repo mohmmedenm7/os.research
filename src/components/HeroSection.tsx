@@ -1,4 +1,5 @@
 import React from 'react';
+import FloatingLines from './FloatingLines';
 import './HeroSection.css';
 
 interface HeroSectionProps {
@@ -11,6 +12,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onEnter }) => {
             <div className="hero-background">
                 <div className="hero-grid"></div>
                 <div className="hero-glow"></div>
+                <FloatingLines
+                    linesGradient={['#22D3EE', '#3B82F6', '#8B5CF6']}
+                    enabledWaves={['middle', 'bottom']}
+                    lineCount={[4, 6]}
+                    lineDistance={[8, 5]}
+                    animationSpeed={0.5}
+                    interactive={true}
+                    parallax={true}
+                    mixBlendMode="screen"
+                />
             </div>
 
             <div className="container hero-content">

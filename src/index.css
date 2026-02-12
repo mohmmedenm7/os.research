@@ -56,17 +56,19 @@ body {
    REVEAL ANIMATIONS
    ============================================ */
 
-/* Base reveal - fade in from bottom */
+/* Base reveal - card pull effect (controlled by scroll) */
 .reveal {
     opacity: 0;
-    transform: translateY(60px);
-    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(100px) scale(0.95) rotateX(10deg);
+    transform-origin: center bottom;
+    transition: opacity 0.1s linear,
+        transform 0.1s linear;
+    will-change: transform, opacity;
 }
 
 .reveal.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1) rotateX(0deg);
 }
 
 /* Staggered reveal for children */
@@ -110,8 +112,9 @@ body {
 .reveal-left {
     opacity: 0;
     transform: translateX(-40px);
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.1s linear,
+        transform 0.1s linear;
+    will-change: transform, opacity;
 }
 
 .reveal-left.active {
@@ -123,8 +126,9 @@ body {
 .reveal-right {
     opacity: 0;
     transform: translateX(40px);
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.1s linear,
+        transform 0.1s linear;
+    will-change: transform, opacity;
 }
 
 .reveal-right.active {
@@ -136,8 +140,9 @@ body {
 .reveal-scale {
     opacity: 0;
     transform: scale(0.9);
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.1s linear,
+        transform 0.1s linear;
+    will-change: transform, opacity;
 }
 
 .reveal-scale.active {
@@ -240,6 +245,7 @@ button {
 
 .section-padding {
     padding: 8rem 0;
+    perspective: 1000px;
 }
 
 .reveal {
